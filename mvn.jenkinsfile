@@ -25,5 +25,8 @@
                 }
           }
         }
+        stage('Test') {
+              powershell '''mvn -s pom.xml test'''
+        }
     }
 }
