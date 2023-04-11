@@ -1,0 +1,23 @@
+
+
+ pipeline {
+    agent any
+    tools {
+         maven 'maven'
+         jdk 'java'
+    }
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+
+            }
+        }
+        stage('checkout') {
+          steps {
+                powershell '''mvn -s pom.xml -DskipTests install'''
+          }   
+           
+        }
+    }
+}
