@@ -15,9 +15,15 @@
         }
         stage('checkout') {
           steps {
-                powershell '''mvn -s pom.xml -DskipTests install'''
+                powershell '''cd C:\\\\Users\\\\lenovo\\\\eclipse-workspace\\\\maven_hello_jenkins_test
+                dir
+                mvn -s pom.xml -DskipTests install'''
           }   
-           
+          post {
+                success {
+                     archiveArtifacts artifacts:'**/*.jar'
+                }
+          }
         }
     }
 }
