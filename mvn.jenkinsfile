@@ -26,7 +26,9 @@
           }
         }
         stage('Test') {
-              powershell '''mvn -s pom.xml test'''
+              steps{
+                   powershell '''mvn -s pom.xml test'''
+              }
         }
     }
 }
