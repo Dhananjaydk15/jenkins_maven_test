@@ -24,9 +24,9 @@
                      archiveArtifacts artifacts:'**/*.jar'
                 }
           }
-          stage('Test') {
-              powershell '''mvn -s pom.xml test'''
         }
+        stage('Test') {
+              powershell '''mvn -s pom.xml test'''
         }
     }
 }
